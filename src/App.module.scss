@@ -1,0 +1,152 @@
+$color1: #EDF2FE;
+$color2: #D93A54;
+$color3: #FFFFFF;
+$color4: #FFB6C1;
+
+.app {
+    body {
+        background-color: $color1;
+    }
+
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    .sky {
+        margin: 40px 0 0 0;
+        overflow: hidden;
+
+        .circle-wrapper {
+            position: relative;
+            background: linear-gradient(darken($color1, 3%), darken($color1, 12%));
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+            z-index: 0;
+            border-radius: 50%;
+            border: 6px solid lighten($color1, 10%);
+
+            .cloud-box {
+                position: absolute;
+
+                .cloud {
+                    width: 90px;
+                    height: 30px;
+                    background-color: $color3;
+                    border-radius: 70% 70% 50% 50%;
+                    margin: 50px 0 0 0;
+                    position: relative;
+                    border-left: 3px solid #ccc;
+                    border-bottom: 3px solid #ccc;
+                    animation: cloud-fly 3s ease-in infinite;
+        
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        top: -10px;
+                        left: 15px;
+                        background-color: $color3;
+                        border-radius: 50%;
+                        z-index: -1;
+                        border-left: 3px solid #ccc;
+                    }
+        
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 40px;
+                        height: 40px;
+                        top: -15px;
+                        left: 35px;
+                        background-color: $color3;
+                        border-radius: 50%;
+                        z-index: -1;
+                        border: 2px solid #ccc;
+                    }
+                }
+
+                :first-child {
+                    margin-left: 90px;
+                }
+
+                :last-child {
+                    margin-left: 200px;
+                }
+            }
+
+            .balloon {
+                width: 300px;
+                height: 300px;
+                position: absolute;
+
+                .balloon-circle {
+                    width: 145px;
+                    height: 120px;
+                    clip-path: ellipse(30% 40% at 50% 50%);
+                    background: linear-gradient(215deg, $color4, darken($color4, 20%));
+                    margin: 0 auto;
+                    position: relative;
+                    z-index: 5;
+                }
+
+                .balloon-triangle {
+                    width: 10px;
+                    height: 10px;
+                    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                    background-color: $color4;
+                    position: absolute;
+                    left: 150px;
+                    top: 105px;
+                    z-index: 4;
+                }
+
+                .balloon-line-box {
+                    animation: balloon-line-move 8s ease infinite;
+
+                    .balloon-line {
+                        position: absolute;
+                        z-index: 3;
+                        left: 53px;
+                        top: -8px;
+                        height: 50px;
+                        width: 200px;
+                        background: radial-gradient(circle at 100%, transparent, transparent 50%, #000, transparent 51%);
+                    }
+    
+                    :last-child {
+                        left: 56px;
+                        top: 42px;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+
+    @keyframes cloud-fly {
+        0% { 
+            margin-top: -25%;
+        }
+        100% { 
+             margin-top: 80%; 
+        }
+    }
+
+    @keyframes balloon-line-move {
+        0% { 
+            transform: rotate(10deg);
+            transform-origin: top center;
+        }
+       50% { 
+            transform: rotate(-12deg);
+            transform-origin: top center;
+        }
+        100% { 
+            transform: rotate(10deg);
+            transform-origin: top center;
+        }
+    }
+}
