@@ -18,6 +18,22 @@ function App() {
                             <div className={styles['balloon-line']} />
                         </div>
                     </div>
+                    <div className={styles['balloon-small']}>
+                        <div className={styles['balloon-circle']} />
+                        <div className={styles['balloon-triangle']} />
+                        <div className={styles['balloon-line-box']}>
+                            <div className={styles['balloon-line']} />
+                            <div className={styles['balloon-line']} />
+                        </div>
+                    </div>
+                    <div className={styles['balloon-small-2']}>
+                        <div className={styles['balloon-circle']} />
+                        <div className={styles['balloon-triangle']} />
+                        <div className={styles['balloon-line-box']}>
+                            <div className={styles['balloon-line']} />
+                            <div className={styles['balloon-line']} />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
