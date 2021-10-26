@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/animation-balloon/static/css/main.9dcf0d4e.chunk.css",
+    "main.js": "/animation-balloon/static/js/main.30d7e691.chunk.js",
+    "main.js.map": "/animation-balloon/static/js/main.30d7e691.chunk.js.map",
+    "runtime-main.js": "/animation-balloon/static/js/runtime-main.b0a5cc1b.js",
+    "runtime-main.js.map": "/animation-balloon/static/js/runtime-main.b0a5cc1b.js.map",
+    "static/js/2.0cc81659.chunk.js": "/animation-balloon/static/js/2.0cc81659.chunk.js",
+    "static/js/2.0cc81659.chunk.js.map": "/animation-balloon/static/js/2.0cc81659.chunk.js.map",
+    "static/js/3.0b95d9ab.chunk.js": "/animation-balloon/static/js/3.0b95d9ab.chunk.js",
+    "static/js/3.0b95d9ab.chunk.js.map": "/animation-balloon/static/js/3.0b95d9ab.chunk.js.map",
+    "index.html": "/animation-balloon/index.html",
+    "static/css/main.9dcf0d4e.chunk.css.map": "/animation-balloon/static/css/main.9dcf0d4e.chunk.css.map",
+    "static/js/2.0cc81659.chunk.js.LICENSE.txt": "/animation-balloon/static/js/2.0cc81659.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b0a5cc1b.js",
+    "static/js/2.0cc81659.chunk.js",
+    "static/css/main.9dcf0d4e.chunk.css",
+    "static/js/main.30d7e691.chunk.js"
+  ]
+}
