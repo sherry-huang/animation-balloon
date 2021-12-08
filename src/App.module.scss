@@ -1,0 +1,327 @@
+$color1: #EDF2FE;
+$color2: #D93A54;
+$color3: #FFFFFF;
+$color4: #FFB6C1;
+$color5: #bdc2f0;
+$color6: #c9f0bd;
+
+.app {
+    body {
+        background-color: $color1;
+    }
+
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    .sky {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+
+        .circle-wrapper {
+            position: relative;
+            background: linear-gradient(darken($color1, 3%), darken($color1, 12%));
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+            z-index: 0;
+            border-radius: 50%;
+            border: 6px solid lighten($color1, 10%);
+
+            .cloud-box {
+                position: absolute;
+
+                .cloud {
+                    width: 90px;
+                    height: 30px;
+                    background-color: $color3;
+                    border-radius: 70% 70% 50% 50%;
+                    margin: 50px 0 0 0;
+                    position: relative;
+                    border-left: 3px solid #ccc;
+                    border-bottom: 3px solid #ccc;
+                    animation: cloud-fly-6 6s ease-in infinite;
+        
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        top: -10px;
+                        left: 15px;
+                        background-color: $color3;
+                        border-radius: 50%;
+                        z-index: -1;
+                        border-left: 3px solid #ccc;
+                    }
+        
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 40px;
+                        height: 40px;
+                        top: -15px;
+                        left: 35px;
+                        background-color: $color3;
+                        border-radius: 50%;
+                        z-index: -1;
+                        border: 2px solid #ccc;
+                    }
+                }
+
+                :first-child {
+                    margin-left: 90px;
+                    animation: cloud-fly-4 4s ease-in infinite;
+                }
+
+                :last-child {
+                    margin-left: 200px;
+                    animation: cloud-fly-5 5s ease-in infinite;
+                }
+            }
+
+            .balloon {
+                width: 300px;
+                height: 300px;
+                position: absolute;
+
+                .balloon-circle {
+                    width: 145px;
+                    height: 120px;
+                    position: relative;
+                    margin: 0 auto;
+                    filter: drop-shadow(-3px 3px 10px rgba(0,0,0,.35));
+                    z-index: 5;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        clip-path: ellipse(30% 40% at 50% 50%);
+                        background: linear-gradient(215deg, $color4, darken($color4, 20%));
+                        z-index: -1;
+                    }
+                }
+
+                .balloon-triangle {
+                    width: 10px;
+                    height: 10px;
+                    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                    background-color: $color4;
+                    position: absolute;
+                    left: 150px;
+                    top: 105px;
+                    z-index: 4;
+                }
+
+                .balloon-line-box {
+                    animation: balloon-line-move 8s ease infinite;
+                    position: relative;
+                    margin: -8px 0 0 0;
+
+                    .balloon-line {
+                        position: absolute;
+                        z-index: 3;
+                        left: 53px;
+                        height: 50px;
+                        width: 200px;
+                        background: radial-gradient(circle at 100%, transparent, transparent 50%, #000, transparent 51%);
+                    }
+    
+                    :last-child {
+                        left: 56px;
+                        top: 50px;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .balloon-small {
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                animation: balloon-small-down 6s ease infinite;
+
+                .balloon-circle {
+                    width: 75px;
+                    height: 60px;
+                    position: relative;
+                    margin: 0 auto;
+                    filter: drop-shadow(-1px 1px 5px rgba(0,0,0,.35));
+                    z-index: 5;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        clip-path: ellipse(30% 40% at 50% 50%);
+                        background: linear-gradient(215deg, $color5, darken($color5, 20%));
+                        z-index: -1;
+                    }
+                }
+
+                .balloon-triangle {
+                    width: 5px;
+                    height: 5px;
+                    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                    background-color: $color5;
+                    position: absolute;
+                    left: 75px;
+                    top: 51px;
+                    z-index: 4;
+                }
+
+                .balloon-line-box {
+                    animation: balloon-line-move 6s ease infinite;
+                    position: relative;
+                    margin: -8px 0 0 0;
+
+                    .balloon-line {
+                        position: absolute;
+                        z-index: 3;
+                        left: 27px;
+                        height: 25px;
+                        width: 100px;
+                        background: radial-gradient(circle at 100%, transparent, transparent 50%, #000, transparent 51%);
+                    }
+    
+                    :last-child {
+                        left: 28.5px;
+                        top: 25px;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .balloon-small-2 {
+                width: 75px;
+                height: 75px;
+                position: absolute;
+                margin: 0 0 0 180px;
+                animation: balloon-small-2-down 12s ease infinite;
+
+                .balloon-circle {
+                    width: 40px;
+                    height: 30px;
+                    position: relative;
+                    margin: 0 auto;
+                    filter: drop-shadow(-1px 1px 5px rgba(0,0,0,.35));
+                    z-index: 5;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        clip-path: ellipse(30% 40% at 50% 50%);
+                        background: linear-gradient(215deg, $color6, darken($color6, 20%));
+                        z-index: -1;
+                    }
+                }
+
+                .balloon-triangle {
+                    width: 5px;
+                    height: 5px;
+                    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                    background-color: $color6;
+                    position: absolute;
+                    left: 35px;
+                    top: 25px;
+                    z-index: 4;
+                }
+
+                .balloon-line-box {
+                    animation: balloon-line-move 8s ease infinite;
+                    position: relative;
+                    margin: -8px 0 0 0;
+
+                    .balloon-line {
+                        position: absolute;
+                        z-index: 3;
+                        top: 8px;
+                        left: 12px;
+                        height: 13px;
+                        width: 50px;
+                        background: radial-gradient(circle at 100%, transparent, transparent 50%, #000, transparent 51%);
+                    }
+    
+                    :last-child {
+                        left: 12px;
+                        top: 20px;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+
+    @keyframes cloud-fly-6 {
+        0% { 
+            margin-top: -100%;
+        }
+        100% { 
+             margin-top: 100%; 
+        }
+    }
+
+    @keyframes cloud-fly-4 {
+        0% { 
+            margin-top: -100%;
+        }
+        100% { 
+             margin-top: 100%; 
+        }
+    }
+
+    @keyframes cloud-fly-5 {
+        0% { 
+            margin-top: -25%;
+        }
+        100% { 
+             margin-top: 100%; 
+        }
+    }
+
+    @keyframes balloon-small-down {
+        0% { 
+            margin-top: -25%;
+        }
+        100% { 
+             margin-top: 100%; 
+        }
+    }
+
+    @keyframes balloon-small-2-down {
+        0% { 
+            margin-top: -25%;
+        }
+        100% { 
+             margin-top: 100%; 
+        }
+    }
+
+    @keyframes balloon-line-move {
+        0% { 
+            transform: rotate(6deg);
+            transform-origin: top;
+        }
+        50% { 
+            transform: rotate(-12deg);
+            transform-origin: top;
+        }
+        100% { 
+            transform: rotate(6deg);
+            transform-origin: top;
+        }
+    }
+}
